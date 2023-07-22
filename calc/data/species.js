@@ -9801,7 +9801,7 @@ var SV_PATCH = {
     },
     Serket: {
         types: ['Bug', 'Dragon'],
-        bs: { hp: 85, at: 65, df: 110, sa: 75, sd: 95, sp: 60 },
+        bs: { hp: 85, at: 65, df: 100, sa: 85, sd: 95, sp: 60 },
         weightkg: 6.8,
         abilities: { 0: 'Poison Heal' }
     },
@@ -9839,7 +9839,7 @@ var SV_PATCH = {
     },
     Veltrilokist: {
         types: ['Bug', 'Ghost'],
-        bs: { hp: 90, at: 60, df: 80, sa: 130, sd: 120, sp: 45 },
+        bs: { hp: 90, at: 60, df: 80, sa: 120, sd: 120, sp: 55 },
         weightkg: 165,
         abilities: { 0: 'Limber' }
     },
@@ -9895,7 +9895,7 @@ var SV_PATCH = {
     Coopoch: {
         types: ['Steel', 'Flying'],
         bs: { hp: 102, at: 90, df: 70, sa: 80, sd: 85, sp: 108 },
-        weightkg: 1.9,
+        weightkg: 2.3,
         abilities: { 0: 'Light Metal' }
     },
     Torrentoise: {
@@ -10032,13 +10032,14 @@ var SV_PATCH = {
     },
     Lediary: {
         types: ['Bug', 'Flying'],
-        bs: { hp: 60, at: 35, df: 50, sa: 55, sd: 110, sp: 85 },
+        bs: { hp: 60, at: 40, df: 55, sa: 60, sd: 115, sp: 90 },
         weightkg: 35.6,
-        abilities: { 0: 'Swarm' }
+        abilities: { 0: 'Swarm' },
+        otherFormes: ['Lediary-Mega']
     },
     'Lediary-Mega': {
         types: ['Bug', 'Fighting'],
-        bs: { hp: 60, at: 40, df: 80, sa: 95, sd: 125, sp: 95 },
+        bs: { hp: 60, at: 45, df: 85, sa: 100, sd: 130, sp: 100 },
         weightkg: 36.2,
         abilities: { 0: 'Swarm' },
         baseSpecies: 'Lediary'
