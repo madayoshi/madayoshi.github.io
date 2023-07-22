@@ -224,7 +224,14 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
         (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
         (move.hasType('Ground') && defender.hasAbility('Earth Eater')) ||
-        (move.flags.wind && defender.hasAbility('Wind Rider'))) {
+        (move.flags.wind && defender.hasAbility('Wind Rider') ||
+            (move.hasType('Steel') && defender.hasAbility('Smithing')))) {
+        desc.defenderAbility = defender.ability;
+        return result;
+    }
+    if (move.target === 'allAdjacent' ||
+        move.target === 'allAdjacentFoes' &&
+            defender.hasAbility('Side Hop')) {
         desc.defenderAbility = defender.ability;
         return result;
     }
@@ -708,7 +715,8 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
         (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
         (attacker.hasAbility('Strong Jaw') && move.flags.bite) ||
         (attacker.hasAbility('Steely Spirit') && move.hasType('Steel')) ||
-        (attacker.hasAbility('Sharpness') && move.flags.slicing)) {
+        (attacker.hasAbility('Sharpness') && move.flags.slicing) ||
+        (attacker.hasAbility('Improv Jazz'))) {
         bpMods.push(6144);
         desc.attackerAbility = attacker.ability;
     }
@@ -734,6 +742,11 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
             if (isDefenderAura)
                 desc.defenderAbility = defender.ability;
         }
+    }
+    if ((attacker.hasAbility('Comet Fist') && move.flags.punch)) {
+        bpMods.push(5325);
+        desc.attackerAbility = attacker.ability;
+        move.category = 'Special';
     }
     if ((attacker.hasAbility('Sheer Force') &&
         (move.secondaries || move.named('Jet Punch', 'Order Up')) && !move.isMax) ||
@@ -908,7 +921,8 @@ function calculateAtModsSMSSSV(gen, attacker, defender, move, field, desc) {
     }
     else if ((attacker.hasAbility('Steelworker') && move.hasType('Steel')) ||
         (attacker.hasAbility('Dragon\'s Maw') && move.hasType('Dragon')) ||
-        (attacker.hasAbility('Rocky Payload') && move.hasType('Rock'))) {
+        (attacker.hasAbility('Rocky Payload') && move.hasType('Rock') ||
+            (attacker.hasAbility('Envenom') && move.hasType('Poison')))) {
         atMods.push(6144);
         desc.attackerAbility = attacker.ability;
     }
