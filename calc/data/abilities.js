@@ -357,6 +357,19 @@ var SV = SS.concat([
     'Wind Power',
     'Wind Rider',
     'Zero to Hero',
+    'Withering Glare',
+    'Polished',
+    'Pre-Ordained',
+    'Improv Jazz',
+    'Soulless Heart',
+    'Shattering Form',
+    'Envenom',
+    'Inertia',
+    'Comet Fist',
+    'Smithing',
+    'Side Hop',
+    'Sphinx\'s Riddle',
+    'Stacked Deck',
 ]);
 exports.ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 var Abilities = (function () {
