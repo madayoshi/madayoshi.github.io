@@ -4839,10 +4839,20 @@ var SV_PATCH = {
         secondaries: true
     },
     'Five-Star Strike': {
-        bp: 75,
+        bp: 125,
         type: 'Bug',
         category: 'Physical',
-        zp: 140
+        zp: 140,
+        makesContact: true,
+        isPunch: true
+    },
+    'Five-Star Strike (below half )': {
+        bp: 152.5,
+        type: 'Bug',
+        category: 'Physical',
+        zp: 140,
+        makesContact: true,
+        isPunch: true
     },
     'Quickdraw Quill': {
         bp: 40,
@@ -4864,7 +4874,10 @@ var SV_PATCH = {
         category: 'Special',
         zp: 120,
         multihit: [2, 3]
-    }
+    },
+    'Befuddling Venom': { bp: 0, category: 'Status', type: 'Poison' },
+    'Enraging Venom': { bp: 0, category: 'Status', type: 'Poison' },
+    'Exhausting Venom': { bp: 0, category: 'Status', type: 'Poison' }
 };
 var SV = (0, util_1.extend)(true, {}, SS, SV_PATCH);
 exports.MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
