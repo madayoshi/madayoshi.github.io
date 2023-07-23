@@ -229,9 +229,9 @@ function calculateSMSSSV(gen, attacker, defender, move, field) {
         desc.defenderAbility = defender.ability;
         return result;
     }
-    if (move.target === 'allAdjacent' ||
-        move.target === 'allAdjacentFoes' &&
-            defender.hasAbility('Side Hop')) {
+    if ((move.target === 'allAdjacent' ||
+        move.target === 'allAdjacentFoes') &&
+        defender.hasAbility('Side Hop')) {
         desc.defenderAbility = defender.ability;
         return result;
     }
